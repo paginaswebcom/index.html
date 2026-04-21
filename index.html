@@ -1,0 +1,448 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Casabe | Levora & Leonix - Soluciones Integrales</title>
+    
+    <!-- Fuentes Modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold: #C5A059;
+            --black: #111111;
+            --white: #ffffff;
+            --gray-light: #f9f9f9;
+            --gray-medium: #ececec;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* --- NAVBAR ESTILO MAITCO --- */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2000;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--black);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--gold); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- HERO MAITCO (Limpio y Centrado) --- */
+        .hero {
+            padding: 180px 10% 100px;
+            text-align: center;
+            background: radial-gradient(circle at top right, #fcfcfc, #ffffff);
+        }
+
+        .badge {
+            background: #f0f0f0;
+            color: var(--gold);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--black);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-cta:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+        }
+
+        /* --- SECCIÓN BENEFICIOS (Iconos Circulares) --- */
+        .features {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover .feature-icon {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* --- SERVICIOS (Cards con Sombra) --- */
+        .services {
+            background: var(--gray-light);
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid var(--gray-medium);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: var(--gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .service-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- INFO SECTION (Maitco Style) --- */
+        .info-split {
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .info-content { flex: 1; }
+        .info-image { flex: 1; position: relative; }
+
+        .info-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .info-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .info-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* --- CONTACTO --- */
+        .contact {
+            padding: 100px 10%;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 40px 40px 0 0;
+            margin-top: 50px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            background: #222;
+            border: 1px solid #333;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: var(--white);
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        .contact-form button {
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* WHATSAPP */
+        .wa-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            z-index: 3000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .info-split, .contact-container { grid-template-columns: 1fr; gap: 40px; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5491138574364" class="wa-button" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <nav>
+        <a href="#" class="logo">LEVORA <span>&</span> LEONIX</a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <span class="badge">Consultoría Integral & Bienestar</span>
+        <h1>Impulsamos tu crecimiento físico y digital</h1>
+        <p>Soluciones personalizadas en Educación, Fitness, Bienestar Corporal y Marketing Estratégico.</p>
+        <div class="hero-btns">
+            <a href="#servicios" class="btn-cta">Explorar Soluciones</a>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-check"></i></div>
+            <h3>Resultados Reales</h3>
+            <p>Metodologías probadas tanto en el aula como en el gimnasio y las redes.</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
+            <h3>Para todas las edades</h3>
+            <p>Programas adaptados a niños, jóvenes, adultos y adultos mayores.</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-medal"></i></div>
+            <h3>Atención Premium</h3>
+            <p>Excelencia y compromiso en cada una de nuestras unidades de negocio.</p>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="section-title">
+            <h2>Nuestras Unidades</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Profe de Inglés</h3>
+                <p>Aprendizaje dinámico personalizado para todas las edades. Enfocado en conversación y confianza.</p>
+                <a href="#contacto" class="service-link">Consultar planes <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <h3>Gimnasia Integral</h3>
+                <p>Salud, movilidad y bienestar físico para todas las edades, dirigido por profesional de Educación Física.</p>
+                <a href="#contacto" class="service-link">Ver horarios <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <h3>Masajes Corporales</h3>
+                <p>Relajación profunda y recuperación muscular. Un momento dedicado a tu bienestar físico.</p>
+                <a href="#contacto" class="service-link">Reservar sesión <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <h3>Community Manager</h3>
+                <p>Gestión estratégica de redes sociales, creación de contenido y branding digital para marcas.</p>
+                <a href="#contacto" class="service-link">Potenciar mi marca <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-split" id="nosotros">
+        <div class="info-image">
+            <div style="background: var(--gold); padding: 40px; border-radius: 20px; color: white; text-align: center;">
+                <i class="fas fa-quote-left" style="font-size: 2rem; margin-bottom: 20px; opacity: 0.5;"></i>
+                <h3 style="font-size: 1.8rem; line-height: 1.2;">"Transformar vidas a través de la educación y el bienestar."</h3>
+                <p style="margin-top: 20px; font-weight: 600;">— Andy Casabe</p>
+            </div>
+        </div>
+        <div class="info-content">
+            <h2>Sobre Andy Casabe</h2>
+            <p>Como <strong>Profesora de Educación Física</strong>, <strong>Profe de Inglés</strong> y especialista en <strong>Marketing Digital</strong>, mi objetivo es brindar una visión integral del desarrollo humano.</p>
+            <p>En Levora & Leonix unimos la pasión por la enseñanza con el cuidado corporal y la comunicación efectiva en el mundo digital, creando una propuesta única en San Miguel del Monte.</p>
+            <a href="https://wa.me/5491138574364" class="btn-cta" style="background: transparent; border: 2px solid var(--black); color: var(--black);">Contactar por WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Hablemos.</h2>
+                <p style="color: #aaa; margin-bottom: 40px;">¿Tenés dudas sobre algún servicio? Ponete en contacto con nosotros.</p>
+                <div style="margin-bottom: 20px;">
+                    <p style="color: var(--gold); font-weight: 700;">UBICACIÓN</p>
+                    <p>San Miguel del Monte, Buenos Aires</p>
+                </div>
+                <div>
+                    <p style="color: var(--gold); font-weight: 700;">WHATSAPP</p>
+                    <p>+54 9 11 3857 4364</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <textarea rows="4" placeholder="¿En qué servicio estás interesado?"></textarea>
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+        <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #333; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #555;">
+            <p>© 2024 Andy Casabe | Levora & Leonix</p>
+            <p>Diseño: Alondra Solange Fernández</p>
+        </div>
+    </section>
+
+</body>
+</html>
+
+```
