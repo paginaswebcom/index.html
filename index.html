@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andy Casabe | Levora & Leonix - Soluciones Integrales</title>
+    <title>Andy Casabe | LEVORA & LEONIX</title>
     
-    <!-- Fuentes Modernas -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fuentes Elegantes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,432 +15,493 @@
     <style>
         :root {
             --gold: #C5A059;
-            --black: #111111;
+            --black: #000000;
             --white: #ffffff;
-            --gray-light: #f9f9f9;
-            --gray-medium: #ececec;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --gray-bg: #f7f7f7;
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
             background-color: var(--white);
             color: var(--black);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* --- NAVBAR ESTILO MAITCO --- */
+        /* --- TOP ANNOUNCEMENT --- */
+        .top-bar {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- NAVBAR ESTILO NATURA --- */
         nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            height: 80px;
+            background: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-main {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 10%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 2000;
-            border-bottom: 1px solid var(--gray-medium);
         }
 
         .logo {
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--black);
-            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+            color: var(--black);
         }
 
         .logo span { color: var(--gold); }
 
-        .nav-links {
+        .search-bar {
+            flex: 0 1 400px;
+            position: relative;
             display: flex;
-            gap: 30px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            background: var(--gray-bg);
+            outline: none;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
             list-style: none;
         }
 
-        .nav-links a {
+        .nav-bottom a {
             text-decoration: none;
             color: var(--black);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover { color: var(--gold); }
-
-        /* --- HERO MAITCO (Limpio y Centrado) --- */
-        .hero {
-            padding: 180px 10% 100px;
-            text-align: center;
-            background: radial-gradient(circle at top right, #fcfcfc, #ffffff);
-        }
-
-        .badge {
-            background: #f0f0f0;
-            color: var(--gold);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            display: inline-block;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            color: var(--black);
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-weight: 400;
-        }
-
-        .btn-cta {
-            display: inline-block;
-            padding: 18px 40px;
-            background: var(--black);
-            color: var(--white);
-            text-decoration: none;
+            font-size: 0.85rem;
             font-weight: 600;
-            border-radius: 8px;
+            text-transform: uppercase;
             transition: var(--transition);
         }
 
-        .btn-cta:hover {
-            background: var(--gold);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
-        }
+        .nav-bottom a:hover { color: var(--gold); }
 
-        /* --- SECCIÓN BENEFICIOS (Iconos Circulares) --- */
-        .features {
-            padding: 80px 10%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gray-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
-            color: var(--gold);
-            transition: var(--transition);
-        }
-
-        .feature-item:hover .feature-icon {
-            background: var(--gold);
-            color: var(--white);
-        }
-
-        .feature-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .feature-item p {
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        /* --- SERVICIOS (Cards con Sombra) --- */
-        .services {
-            background: var(--gray-light);
-            padding: 100px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 50px 40px;
-            border-radius: 20px;
-            border: 1px solid var(--gray-medium);
-            transition: var(--transition);
+        /* --- HERO SLIDER --- */
+        .hero-slider {
+            width: 100%;
+            height: 500px;
             position: relative;
             overflow: hidden;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            border-color: var(--gold);
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
-        .service-card h3 {
-            font-size: 1.4rem;
+        .slide.active { opacity: 1; }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .slide-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .btn-natura {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .btn-natura:hover {
+            background: var(--gold);
+        }
+
+        /* --- CATEGORÍAS CIRCULARES --- */
+        .categories {
+            padding: 60px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            overflow-x: auto;
+        }
+
+        .cat-item {
+            text-align: center;
+            min-width: 120px;
+            cursor: pointer;
+        }
+
+        .cat-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--gray-bg);
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .cat-item:hover .cat-img {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .cat-img i { font-size: 2rem; color: var(--gold); }
+        .cat-item p { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+
+        /* --- GRID DE SERVICIOS (PRODUCTOS) --- */
+        .section-title {
+            padding: 40px 5% 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .product-grid {
+            padding: 0 5% 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 250px;
+            background: var(--gray-bg);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .product-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-buy {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid var(--black);
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-buy:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* --- BANNER BIENESTAR --- */
+        .banner-propuesta {
+            background: var(--gold);
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            color: var(--white);
+        }
+
+        .banner-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+
+        /* --- FOOTER ESTILO NATURA --- */
+        footer {
+            background: #f4f4f4;
+            padding: 80px 10% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 25px;
             color: var(--black);
         }
 
-        .service-card p {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .service-link {
-            color: var(--gold);
+        .footer-col a {
+            display: block;
             text-decoration: none;
-            font-weight: 700;
+            color: #666;
+            margin-bottom: 12px;
             font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        /* --- INFO SECTION (Maitco Style) --- */
-        .info-split {
-            padding: 100px 10%;
-            display: flex;
-            align-items: center;
-            gap: 80px;
+        .footer-bottom {
+            border-top: 1px solid #ddd;
+            padding-top: 40px;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #999;
         }
 
-        .info-content { flex: 1; }
-        .info-image { flex: 1; position: relative; }
-
-        .info-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-        }
-
-        .info-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 25px;
-            font-weight: 800;
-        }
-
-        .info-content p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        /* --- CONTACTO --- */
-        .contact {
-            padding: 100px 10%;
-            background: var(--black);
-            color: var(--white);
-            border-radius: 40px 40px 0 0;
-            margin-top: 50px;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            background: #222;
-            border: 1px solid #333;
-            padding: 15px 20px;
-            border-radius: 8px;
-            color: var(--white);
-            margin-bottom: 20px;
-            outline: none;
-        }
-
-        .contact-form button {
-            background: var(--gold);
-            color: var(--white);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        /* WHATSAPP */
-        .wa-button {
+        .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            z-index: 3000;
+            z-index: 2000;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 768px) {
-            .info-split, .contact-container { grid-template-columns: 1fr; gap: 40px; }
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
+            .nav-bottom { display: none; }
+            .banner-propuesta { flex-direction: column; text-align: center; }
+            .hero-slider { height: 400px; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5491138574364" class="wa-button" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="top-bar">Consúltanos por horarios y sesiones personalizadas al +54 9 11 3857 4364</div>
 
     <nav>
-        <a href="#" class="logo">LEVORA <span>&</span> LEONIX</a>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+        <div class="nav-main">
+            <a href="#" class="logo">LEVORA <span>&</span> LEONIX</a>
+            <div class="search-bar">
+                <input type="text" placeholder="¿Qué estás buscando hoy?">
+            </div>
+            <div style="display: flex; gap: 20px; font-size: 1.2rem;">
+                <i class="far fa-user"></i>
+                <i class="far fa-heart"></i>
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </div>
+        <ul class="nav-bottom">
+            <li><a href="#ingles">Inglés</a></li>
+            <li><a href="#gimnasia">Gimnasia</a></li>
+            <li><a href="#masajes">Masajes</a></li>
+            <li><a href="#marketing">Marketing</a></li>
+            <li><a href="#nosotros">Sobre Mí</a></li>
         </ul>
     </nav>
 
-    <header class="hero" id="inicio">
-        <span class="badge">Consultoría Integral & Bienestar</span>
-        <h1>Impulsamos tu crecimiento físico y digital</h1>
-        <p>Soluciones personalizadas en Educación, Fitness, Bienestar Corporal y Marketing Estratégico.</p>
-        <div class="hero-btns">
-            <a href="#servicios" class="btn-cta">Explorar Soluciones</a>
+    <!-- Slider Hero -->
+    <div class="hero-slider">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2040');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Cuidá tu Cuerpo</h2>
+                <p>Sesiones de Masajes Corporales y Gimnasia Integral para todas las edades.</p>
+                <a href="#masajes" class="btn-natura">Ver Sesiones</a>
+            </div>
         </div>
-    </header>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Potenciá tu Mente</h2>
+                <p>Clases de Inglés personalizadas con una metodología dinámica y efectiva.</p>
+                <a href="#ingles" class="btn-natura">Consultar Clases</a>
+            </div>
+        </div>
+    </div>
 
-    <section class="features">
-        <div class="feature-item">
-            <div class="feature-icon"><i class="fas fa-check"></i></div>
-            <h3>Resultados Reales</h3>
-            <p>Metodologías probadas tanto en el aula como en el gimnasio y las redes.</p>
+    <!-- Categorías -->
+    <div class="categories">
+        <div class="cat-item">
+            <div class="cat-img"><i class="fas fa-graduation-cap"></i></div>
+            <p>Inglés</p>
         </div>
-        <div class="feature-item">
-            <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
-            <h3>Para todas las edades</h3>
-            <p>Programas adaptados a niños, jóvenes, adultos y adultos mayores.</p>
+        <div class="cat-item">
+            <div class="cat-img"><i class="fas fa-running"></i></div>
+            <p>Gimnasia</p>
         </div>
-        <div class="feature-item">
-            <div class="feature-icon"><i class="fas fa-medal"></i></div>
-            <h3>Atención Premium</h3>
-            <p>Excelencia y compromiso en cada una de nuestras unidades de negocio.</p>
+        <div class="cat-item">
+            <div class="cat-img"><i class="fas fa-spa"></i></div>
+            <p>Masajes</p>
+        </div>
+        <div class="cat-item">
+            <div class="cat-img"><i class="fas fa-bullhorn"></i></div>
+            <p>Digital</p>
+        </div>
+    </div>
+
+    <!-- Sección Servicios -->
+    <h2 class="section-title">Nuestros Servicios Destacados</h2>
+    <div class="product-grid">
+        <!-- Servicio 1 -->
+        <div class="product-card" id="ingles">
+            <div class="product-img"><i class="fas fa-book" style="font-size: 4rem; color: #ddd;"></i></div>
+            <h3>Profe de Inglés</h3>
+            <p>Aprendizaje personalizado para niños, jóvenes y adultos. Clases adaptadas a tus metas profesionales o académicas.</p>
+            <button class="btn-buy" onclick="window.open('https://wa.me/5491138574364')">PEDIR MÁS INFO</button>
+        </div>
+        <!-- Servicio 2 -->
+        <div class="product-card" id="gimnasia">
+            <div class="product-img"><i class="fas fa-user-check" style="font-size: 4rem; color: #ddd;"></i></div>
+            <h3>Gimnasia Integral</h3>
+            <p>Entrenamiento diseñado para todas las edades por la Prof. Andy Casabe. Movilidad, salud y vitalidad.</p>
+            <button class="btn-buy" onclick="window.open('https://wa.me/5491138574364')">RESERVAR LUGAR</button>
+        </div>
+        <!-- Servicio 3 -->
+        <div class="product-card" id="masajes">
+            <div class="product-img"><i class="fas fa-hands" style="font-size: 4rem; color: #ddd;"></i></div>
+            <h3>Masajes Corporales</h3>
+            <p>Momentos de relajación profunda y masoterapia para equilibrar mente y cuerpo después de la rutina.</p>
+            <button class="btn-buy" onclick="window.open('https://wa.me/5491138574364')">SOLICITAR TURNO</button>
+        </div>
+        <!-- Servicio 4 -->
+        <div class="product-card" id="marketing">
+            <div class="product-img"><i class="fas fa-hashtag" style="font-size: 4rem; color: #ddd;"></i></div>
+            <h3>Community Manager</h3>
+            <p>Gestión estratégica de redes sociales para emprendedores y marcas que buscan impactar en el mundo digital.</p>
+            <button class="btn-buy" onclick="window.open('https://wa.me/5491138574364')">POTENCIAR MI MARCA</button>
+        </div>
+    </div>
+
+    <!-- Banner Propósito -->
+    <section class="banner-propuesta" id="nosotros">
+        <div class="banner-content">
+            <h2>Cada ciclo importa.</h2>
+            <p>En Levora & Leonix creemos en el bienestar circular. Cuidar lo que aprendemos, cómo nos movemos y cómo nos comunicamos con el mundo.</p>
+            <p style="margin-top: 20px; font-weight: 700;">Andy Casabe | Directora Integral</p>
+        </div>
+        <div style="flex: 1; background: #000; height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-leaf" style="font-size: 5rem; color: var(--gold); opacity: 0.5;"></i>
         </div>
     </section>
 
-    <section class="services" id="servicios">
-        <div class="section-title">
-            <h2>Nuestras Unidades</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Profe de Inglés</h3>
-                <p>Aprendizaje dinámico personalizado para todas las edades. Enfocado en conversación y confianza.</p>
-                <a href="#contacto" class="service-link">Consultar planes <i class="fas fa-arrow-right"></i></a>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Sobre Nosotros</h4>
+                <a href="#">Propósito</a>
+                <a href="#">Andy Casabe</a>
+                <a href="#">Unidades de Negocio</a>
             </div>
-            <div class="service-card">
-                <h3>Gimnasia Integral</h3>
-                <p>Salud, movilidad y bienestar físico para todas las edades, dirigido por profesional de Educación Física.</p>
-                <a href="#contacto" class="service-link">Ver horarios <i class="fas fa-arrow-right"></i></a>
+            <div class="footer-col">
+                <h4>Ayuda</h4>
+                <a href="#">Contacto</a>
+                <a href="#">Preguntas Frecuentes</a>
+                <a href="#">Términos y Condiciones</a>
             </div>
-            <div class="service-card">
-                <h3>Masajes Corporales</h3>
-                <p>Relajación profunda y recuperación muscular. Un momento dedicado a tu bienestar físico.</p>
-                <a href="#contacto" class="service-link">Reservar sesión <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card">
-                <h3>Community Manager</h3>
-                <p>Gestión estratégica de redes sociales, creación de contenido y branding digital para marcas.</p>
-                <a href="#contacto" class="service-link">Potenciar mi marca <i class="fas fa-arrow-right"></i></a>
+            <div class="footer-col">
+                <h4>Redes Sociales</h4>
+                <a href="https://www.instagram.com/levora.leonix" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@levora.leonix" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://wa.me/5491138574364" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            <p>© 2024 Andy Casabe | Levora & Leonix - San Miguel del Monte, Bs.As.</p>
+            <p style="margin-top: 10px;">DISEÑO POR ALONDRA SOLANGE FERNÁNDEZ</p>
+        </div>
+    </footer>
 
-    <section class="info-split" id="nosotros">
-        <div class="info-image">
-            <div style="background: var(--gold); padding: 40px; border-radius: 20px; color: white; text-align: center;">
-                <i class="fas fa-quote-left" style="font-size: 2rem; margin-bottom: 20px; opacity: 0.5;"></i>
-                <h3 style="font-size: 1.8rem; line-height: 1.2;">"Transformar vidas a través de la educación y el bienestar."</h3>
-                <p style="margin-top: 20px; font-weight: 600;">— Andy Casabe</p>
-            </div>
-        </div>
-        <div class="info-content">
-            <h2>Sobre Andy Casabe</h2>
-            <p>Como <strong>Profesora de Educación Física</strong>, <strong>Profe de Inglés</strong> y especialista en <strong>Marketing Digital</strong>, mi objetivo es brindar una visión integral del desarrollo humano.</p>
-            <p>En Levora & Leonix unimos la pasión por la enseñanza con el cuidado corporal y la comunicación efectiva en el mundo digital, creando una propuesta única en San Miguel del Monte.</p>
-            <a href="https://wa.me/5491138574364" class="btn-cta" style="background: transparent; border: 2px solid var(--black); color: var(--black);">Contactar por WhatsApp</a>
-        </div>
-    </section>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5491138574364" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <section class="contact" id="contacto">
-        <div class="contact-container">
-            <div>
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Hablemos.</h2>
-                <p style="color: #aaa; margin-bottom: 40px;">¿Tenés dudas sobre algún servicio? Ponete en contacto con nosotros.</p>
-                <div style="margin-bottom: 20px;">
-                    <p style="color: var(--gold); font-weight: 700;">UBICACIÓN</p>
-                    <p>San Miguel del Monte, Buenos Aires</p>
-                </div>
-                <div>
-                    <p style="color: var(--gold); font-weight: 700;">WHATSAPP</p>
-                    <p>+54 9 11 3857 4364</p>
-                </div>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Nombre completo" required>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <textarea rows="4" placeholder="¿En qué servicio estás interesado?"></textarea>
-                    <button type="submit">Enviar mensaje</button>
-                </form>
-            </div>
-        </div>
-        <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #333; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #555;">
-            <p>© 2024 Andy Casabe | Levora & Leonix</p>
-            <p>Diseño: Alondra Solange Fernández</p>
-        </div>
-    </section>
+    <script>
+        // Lógica simple para el slider
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+    </script>
 
 </body>
 </html>
